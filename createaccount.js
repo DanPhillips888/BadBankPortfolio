@@ -1,8 +1,10 @@
 function CreateAccount() {
     const ctx = React.useContext(UserContext);
+    let users = [...ctx.users];
+    let userNumber = users.length;
 
     function handle(data){
-        ctx.users.push({name: data.name, email: data.email, password: data.password, balance:100 });
+        ctx.users.push({id: userNumber, name: data.name, email: data.email, password: data.password, balance:100 });
         return true;
     }
 
